@@ -1,18 +1,28 @@
-%define		kdeappsver	18.04.0
-%define		qtver		5.3.2
+%define		kdeappsver	18.12.0
+%define		qtver		5.9.0
 %define		kaname		libkmahjongg
 Summary:	libkmahjongg
 Name:		ka5-%{kaname}
-Version:	18.04.0
+Version:	18.12.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	c3e65b7509bbe3505ef3ee06c7a8b932
+# Source0-md5:	73524f4ed1fb475e1f681a962e3bb776
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5Gui-devel
+BuildRequires:	Qt5Svg-devel
+BuildRequires:	Qt5Widgets-devel >= 5.11.1
 BuildRequires:	cmake >= 2.8.12
-BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
+BuildRequires:	gettext-devel
+BuildRequires:	kf5-extra-cmake-modules >= 5.53.0
+BuildRequires:	kf5-kcompletion-devel >= 5.30.0
+BuildRequires:	kf5-kconfig-devel >= 5.30.0
+BuildRequires:	kf5-kconfigwidgets-devel >= 5.30.0
+BuildRequires:	kf5-kcoreaddons-devel >= 5.30.0
+BuildRequires:	kf5-ki18n-devel >= 5.30.0
+BuildRequires:	kf5-kwidgetsaddons-devel >= 5.30.0
 BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
@@ -27,7 +37,7 @@ KShisen.
 
 %package devel
 Summary:	Header files for %{kaname} development
-Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kpname}
+Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kaname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -63,6 +73,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
+/etc/xdg/libkmahjongg.categories
 %attr(755,root,root) %ghost %{_libdir}/libKF5KMahjongglib.so.5
 %attr(755,root,root) %{_libdir}/libKF5KMahjongglib.so.*.*.*
 %{_datadir}/kmahjongglib
