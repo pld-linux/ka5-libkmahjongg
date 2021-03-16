@@ -1,15 +1,15 @@
-%define		kdeappsver	19.04.1
+%define		kdeappsver	20.12.3
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		libkmahjongg
 Summary:	libkmahjongg
 Name:		ka5-%{kaname}
-Version:	19.04.1
+Version:	20.12.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	cdc46003b56faf6ae5aae7e27539709d
+Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	32000541972edec98fbc4e35705064b9
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel
@@ -76,10 +76,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-/etc/xdg/libkmahjongg.categories
 %attr(755,root,root) %ghost %{_libdir}/libKF5KMahjongglib.so.5
 %attr(755,root,root) %{_libdir}/libKF5KMahjongglib.so.*.*.*
 %{_datadir}/kmahjongglib
+%{_datadir}/qlogging-categories5/libkmahjongg.categories
 
 %files devel
 %defattr(644,root,root,755)
