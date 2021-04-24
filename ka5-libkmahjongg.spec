@@ -1,15 +1,15 @@
-%define		kdeappsver	20.12.3
+%define		kdeappsver	21.04.0
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		libkmahjongg
 Summary:	libkmahjongg
 Name:		ka5-%{kaname}
-Version:	20.12.3
+Version:	21.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	32000541972edec98fbc4e35705064b9
+# Source0-md5:	0b2048e7e48ac4162f65a7ae1208be45
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel
@@ -76,7 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %ghost %{_libdir}/libKF5KMahjongglib.so.5
+%ghost %{_libdir}/libKF5KMahjongglib.so.5
 %attr(755,root,root) %{_libdir}/libKF5KMahjongglib.so.*.*.*
 %{_datadir}/kmahjongglib
 %{_datadir}/qlogging-categories5/libkmahjongg.categories
@@ -85,4 +85,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_includedir}/KF5/KF5KMahjongg
 %{_libdir}/cmake/KF5KMahjongglib
-%attr(755,root,root) %{_libdir}/libKF5KMahjongglib.so
+%{_libdir}/libKF5KMahjongglib.so
