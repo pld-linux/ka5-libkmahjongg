@@ -37,6 +37,11 @@ This package contains the library used for loading and rendering of
 Mahjongg tilesets and associated backgrounds, used by KMahjongg and
 KShisen.
 
+%description -l pl.UTF-8
+Ten pakiet zawiera bibliotekę używaną do ładowania i wyświetlania
+kafelków Mahjongga i powiązanych obrazków tła. Używana jest przez
+KMahjongga i KShisen.
+
 %package devel
 Summary:	Header files for %{kaname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kaname}
