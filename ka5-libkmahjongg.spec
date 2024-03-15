@@ -1,34 +1,34 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.01.95
+%define		kdeappsver	23.08.4
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		libkmahjongg
 Summary:	libkmahjongg
 Name:		ka5-%{kaname}
-Version:	24.01.95
-Release:	0.1
+Version:	23.08.4
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/unstable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	66e629d8f11830017fc44927f2b0bdc4
+Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	b933046a555ba48761c96f44a55e2c47
 URL:		http://www.kde.org/
-BuildRequires:	Qt6Core-devel >= %{qtver}
-BuildRequires:	Qt6Gui-devel
-BuildRequires:	Qt6Svg-devel
-BuildRequires:	Qt6Widgets-devel >= 5.11.1
+BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5Gui-devel
+BuildRequires:	Qt5Svg-devel
+BuildRequires:	Qt5Widgets-devel >= 5.11.1
 BuildRequires:	cmake >= 3.20
 BuildRequires:	gettext-devel
-BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
-BuildRequires:	kf6-kcompletion-devel >= %{kframever}
-BuildRequires:	kf6-kconfig-devel >= %{kframever}
-BuildRequires:	kf6-kconfigwidgets-devel >= %{kframever}
-BuildRequires:	kf6-kcoreaddons-devel >= %{kframever}
-BuildRequires:	kf6-ki18n-devel >= %{kframever}
-BuildRequires:	kf6-kwidgetsaddons-devel >= %{kframever}
+BuildRequires:	kf5-extra-cmake-modules >= %{kframever}
+BuildRequires:	kf5-kcompletion-devel >= %{kframever}
+BuildRequires:	kf5-kconfig-devel >= %{kframever}
+BuildRequires:	kf5-kconfigwidgets-devel >= %{kframever}
+BuildRequires:	kf5-kcoreaddons-devel >= %{kframever}
+BuildRequires:	kf5-ki18n-devel >= %{kframever}
+BuildRequires:	kf5-kwidgetsaddons-devel >= %{kframever}
 BuildRequires:	ninja
-BuildRequires:	qt6-build >= %{qtver}
+BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
@@ -88,13 +88,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%ghost %{_libdir}/libKMahjongg6.so.6
-%attr(755,root,root) %{_libdir}/libKMahjongg6.so.*.*
+%ghost %{_libdir}/libKF5KMahjongglib.so.5
+%attr(755,root,root) %{_libdir}/libKF5KMahjongglib.so.*.*.*
 %{_datadir}/kmahjongglib
-%{_datadir}/qlogging-categories6/libkmahjongg.categories
+%{_datadir}/qlogging-categories5/libkmahjongg.categories
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/KMahjongg6
-%{_libdir}/cmake/KMahjongglib6
-%{_libdir}/libKMahjongg6.so
+%{_includedir}/KF5/KMahjongg
+%{_libdir}/cmake/KF5KMahjongglib
+%{_libdir}/libKF5KMahjongglib.so
